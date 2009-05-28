@@ -1,0 +1,42 @@
+Win32-Process-CpuUsage version 0.01
+===================================
+
+This module tries to get the CPU usage and command line parameter of a Windows process, and the system CPU usage.
+It reuses 
+	code from Win32::Process::CommandLine for getting the process's command line parameter, 
+		http://search.cpan.org/~kxj/Win32-Process-CommandLine-0.03/
+
+	code from Win32::SystemInfo::CpuUsage for getting system CPU usage, 
+		http://search.cpan.org/~kxj/Win32-SystemInfo-CpuUsage-0.02/
+
+There isn't dependency among these 3 modules, which serve different purpose.
+
+Build Environment
+	. Use h2xs to generate module skeleton: h2xs -O -x -n Win32::Process::CpuUsage CpuUsage.h
+	. This module uses GetProcessTimes and GetSystemTimes to calculate the CPU usage percentage.
+	
+	. If use VC++ 6 to compile, you need Microsoft Platform SDK. GetSystemTimes doesn't exist in VC++6 's header files.
+	. Visual C++ 2008 Express should compile this module. http://www.microsoft.com/express/download/
+	. Here is the reference for how to calculate the percentage:
+		http://www.codeproject.com/KB/threads/Get_CPU_Usage.aspx
+	. A standalone project is in folder exe that can be loaded and compiled by MS Visual Studio.
+
+INSTALLATION
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+DEPENDENCIES
+
+	This module requires these other modules and libraries for testing:
+
+	Win32::Process
+
+Copyleft (C) 2009 by Jing Kang (kxj@hotmail.com)
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
