@@ -1,7 +1,7 @@
 --- #YAML:1.0
 name:               Win32-Process-CpuUsage
-version:            0.01
-abstract:           Perl extension for getting a Windows process's CPU usage, command line parameter, and system CPU usage.
+version:            0.02
+abstract:           Perl extension for getting a Windows process's CPU usage
 author:
     - Jing Kang <kxj@hotmail.com>
 license:            unknown

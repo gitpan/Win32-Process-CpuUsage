@@ -136,7 +136,7 @@ BOOL GetProcessCmdLine(DWORD dwId,LPWSTR *wBuf);
 
 /*=====================*/
 
-int GetPidCommandLine(int pid, SV *cmdParameter){
+int GetPidCommandLine(int pid, SV* cmdParameter){
 	DWORD dwMinSize;
 #ifdef _DEBUG
 	HANDLE hOut;
@@ -465,11 +465,9 @@ OUTPUT:
 
 int
 GetPidCommandLine(pid, cmdParameter)
-INPUT:
 	int pid
-	SV* cmdParameter;
+	SV* cmdParameter
 CODE:
-    /* initialize to undefined */
     sv_setsv(cmdParameter, newSV(0));
 	RETVAL 	= GetPidCommandLine(pid, cmdParameter);
 OUTPUT:

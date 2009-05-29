@@ -26,7 +26,7 @@ our @EXPORT = qw(
 	
 );
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub AUTOLOAD {
     # This AUTOLOAD is used to 'autoload' constants from the constant()
@@ -64,19 +64,19 @@ __END__
 
 =head1 NAME
 
-Win32::Process::CpuUsage - Perl extension for getting a Windows process's CPU usage, command line parameter, and system CPU usage.
+Win32::Process::CpuUsage - Perl extension for getting a Windows process's CPU usage
 
 =head1 SYNOPSIS
 
-use Win32::Process::CpuUsage;
+  use Win32::Process::CpuUsage;
 
-($pid, $interval, $counts) = (4800, 1000, 3);
+  ($pid, $interval, $counts) = (4800, 1000, 3);
 
-$rs = Win32::Process::CpuUsage::GetProcessCpuUsage($pid, $interval, $counts, $prcCPU, $sysCPU);
+  $rs = Win32::Process::CpuUsage::GetProcessCpuUsage($pid, $interval, $counts, $prcCPU, $sysCPU);
 
-$rs = Win32::Process::CpuUsage::GetPidCommandLine($pid, $str);
+  $rs = Win32::Process::CpuUsage::GetPidCommandLine($pid, $str);
 
-$usage = Win32::Process::CpuUsage::GetSystemCpuUsage($interval);
+  $usage = Win32::Process::CpuUsage::GetSystemCpuUsage($interval);
 
 =head1 DESCRIPTION
 
@@ -99,7 +99,7 @@ If the method is called successfully, the return value is 0, otherwise it is -1.
 
 =item * pid
 
-Process ID in integer
+Process ID
 
 =item * interval
 
